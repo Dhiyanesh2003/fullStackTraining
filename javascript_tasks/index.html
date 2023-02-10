@@ -7,29 +7,78 @@
         #clear1, #clear2, #clear3, #clear4, #clear5, #clear6{
             display: none;
         }
+        main{
+            display: flex;
+            flex-direction: column;
+            margin-left: 20%;
+            margin-right: 20%;
+            justify-content: center;
+            padding: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
     </style>
 	<body>
 		<main>
             <!-- question-1 -->
-			<h2>1st program</h2>
-            <input type="text" id="q1" placeholder="Input Text">
-            <button onclick="q1()">Run</button><br><br>
-            <button onclick="clear1()" id="clear1">Clear</button>
-            <h3>Output: <span id="1"></span></h3><hr>
+            <div>
+                <h2>1st program</h2>
+                <input type="text" id="q1" placeholder="Input Text">
+                <button onclick="q1()">Run</button><br><br>
+                <button onclick="clear1()" id="clear1">Clear</button>
+                <h3>Output: <span id="1"></span></h3><hr>
+            </div>
+
+            <!-- question-2 -->
+            <div>
+                <h2>2nd program</h2>
+                <input type="text" id="q2" value="['a','b','c','d','e','f']" />
+                <button onclick="q2()">Run</button><br><br>
+                <button onclick="clear2()" id="clear2">Clear</button>
+                <h3>Output: <span id="2"></span></h3><hr>
+            </div>
+
+            <!-- question-3 -->
+            <div>
+                <h2>3rd program</h2>
+                <label for="s1">Stack -1</label>
+                <input type="text" id="s1" disabled/><br><br>
+                <label for="s2">Stack -2</label>
+                <input type="text" id="s2" disabled/><br><br>
+                <input type="text" id="q3" placeholder="Enter the value to enqueue"/>
+                <button onclick="q3enqueue()">Enqueue</button>
+                <button onclick="q3dequeue()">Dequeue</button>
+                <br><br>
+                <button onclick="clear3()" id="clear3">Clear</button>
+                <h3>Output: <span id="2"></span></h3><hr>
+            </div>
 
             <!-- question-4 -->
-			<h2>4th program</h2>
-            <button onclick="q4()">Execute</button><br><br>
-            <button onclick="clear4()" id="clear4">Clear</button>
-            <h3>Output: <span id="4"></span></h3><hr>
+            <div>
+                <h2>4th program</h2>
+                <button onclick="q4()">Execute</button><br><br>
+                <button onclick="clear4()" id="clear4">Clear</button>
+                <h3>Output: <span id="4"></span></h3><hr>
+            </div>
 
             <!-- question-5 -->
-			<h2>5th program</h2>
-            <input type="text" id="q5-1" placeholder="Input Text"><br><br>
-            <input type="text" id="q5-2" placeholder="Input Text">
-            <button onclick="q5()">Run</button><br><br>
-            <button onclick="clear5()" id="clear5">Clear</button>
-            <h3>Output: <span id="5"></span></h3><hr>
+            <div>
+                <h2>5th program</h2>
+                <input type="text" id="q5-1" placeholder="Input Text"><br><br>
+                <input type="text" id="q5-2" placeholder="Input Text">
+                <button onclick="q5()">Run</button><br><br>
+                <button onclick="clear5()" id="clear5">Clear</button>
+                <h3>Output: <span id="5"></span></h3><hr>
+            </div>
+
+            <!-- question-6 -->
+            <div>
+                <h2>6th program</h2>
+                <input type="text" id="q6" placeholder="Input Text">
+                <button onclick="q6()">Vaidate</button><br><br>
+                <button onclick="clear6()" id="clear6">Clear</button>
+                <h3>Output: <span id="6"></span></h3><hr>
+            </div>   
+
 		</main>
 	</body>
     <script src="script.js"></script>
