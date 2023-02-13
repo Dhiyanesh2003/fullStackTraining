@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Document</title>
+	</head>
+	<script
+		src="https://kit.fontawesome.com/6b30547080.js"
+		crossorigin="anonymous"
+	></script>
+	<link
+		rel="preconnect"
+		href="https://fonts.googleapis.com"
+	/>
+	<link
+		rel="preconnect"
+		href="https://fonts.gstatic.com"
+		crossorigin
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap"
+		rel="stylesheet"
+	/>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			transition: 1s;
+		}
+		.zoom:hover {
+			cursor: pointer;
+			-ms-transform: scale(1.5);
+			-webkit-transform: scale(1.5);
+			transform: scale(1.5);
+		}
+		.zoomx:hover {
+			cursor: pointer;
+			-ms-transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+		body {
+			background-color: black;
+			color: white;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+		body::-webkit-scrollbar {
+			display: none;
+		}
+		.main-nav {
+			margin-top: 30px;
+			display: flex;
+			justify-content: space-between;
+			font-size: 17px;
+		}
+		.left-nav {
+			min-width: 600px;
+			display: flex;
+			justify-content: space-between;
+			padding: 5px;
+		}
+		.left-nav a {
+			text-decoration: none;
+			color: white;
+			transition: 1s;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+		.nav-btn a:hover {
+			background-color: white;
+			color: black;
+		}
+		.left-nav #x {
+			margin-left: 70px;
+			color: rgb(167, 0, 0);
+			font-family: "Sigmar One", cursive;
+		}
+		.nav-btn {
+			padding-top: 5px;
+			min-width: 300px;
+			display: flex;
+			justify-content: space-around;
+		}
+		#active {
+			text-decoration: underline;
+		}
+		.main-nav .right-btn button {
+			padding: 10px;
+			font-size: 13px;
+			border-radius: 10px;
+			background-color: rgb(255, 85, 0);
+			color: white;
+			margin-top: 10px;
+			margin-right: 100px;
+		}
+		.gap1 {
+			height: 100px;
+		}
+		.cont-1 {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+		}
+		#img1 {
+			width: inherit;
+		}
+		#img1:hover {
+			cursor: pointer;
+		}
+		.cont-1 p {
+			font-size: 20px;
+			position: absolute;
+			bottom: 120px;
+			left: 30px;
+		}
+		#s1 {
+			font-size: 35px;
+			position: absolute;
+			bottom: 70px;
+			left: 30px;
+		}
+		#s2 {
+			position: absolute;
+			bottom: 25px;
+			left: 0;
+			font-size: 35px;
+			margin-left: 30px;
+		}
+		#s3 {
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			font-size: 35px;
+			margin-left: 30px;
+		}
+		.cont-1 button {
+			position: absolute;
+			bottom: -140px;
+			left: 0;
+			margin-left: 30px;
+			padding: 20px;
+			background-color: rgb(50, 50, 50);
+			color: white;
+			border-radius: 35px;
+			font-size: 18px;
+			transition: 0.5s;
+		}
+		.cont-1 button:hover {
+			background-color: rgb(100, 100, 100);
+			cursor: pointer;
+		}
+		.gap2 {
+			height: 250px;
+		}
+		.cont-2 {
+			margin-left: 30px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		.cont-2 .left h1 {
+			margin-top: 20px;
+			margin-bottom: 30px;
+			font-size: 50px;
+			letter-spacing: 2px;
+			word-spacing: 2px;
+		}
+		.cont-2 .left p {
+			font-size: 20px;
+		}
+		.cont-2 .left .sub-cont {
+			margin-top: 50px;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.sub-cont .left {
+			margin-right: 50px;
+		}
+		.sub-cont i {
+			font-size: 70px;
+			margin-bottom: 30px;
+			color: rgb(255, 85, 0);
+		}
+		#img2 {
+			height: 600px;
+			width: 800px;
+		}
+		.gap3 {
+			height: 100px;
+		}
+		.cont-3 {
+			width: inherit;
+			margin-left: 30px;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.cont-3 .right {
+			margin-left: 100px;
+			width: 500px;
+		}
+		.cont-3 .right h1 {
+			margin-top: 20px;
+			margin-bottom: 30px;
+			font-size: 50px;
+			letter-spacing: 2px;
+			word-spacing: 2px;
+		}
+		.cont-3 .right p {
+			font-size: 17px;
+			line-height: 25px;
+		}
+		.cont-3 .sub-cont {
+			margin-top: 70px;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.cont-3 .sub-cont .leftt {
+			margin-right: 100px;
+		}
+		.sub-cont h2 {
+			font-size: 35px;
+			margin-bottom: 15px;
+		}
+		.sub-cont hr {
+			width: 30px;
+			border: 3px solid rgb(255, 85, 0);
+			margin-bottom: 20px;
+		}
+		.cont-3 .right p:last-child {
+			word-spacing: 2px;
+		}
+		#img3 {
+			height: 600px;
+			width: 600px;
+			filter: contrast(125%);
+		}
+		.gap4 {
+			height: 100px;
+		}
+		footer .bottom-nav {
+			display: flex;
+			justify-content: space-between;
+		}
+		footer .left-nav {
+			width: 60%;
+			display: flex;
+			justify-content: space-between;
+		}
+		footer .right {
+			margin-top: 15px;
+			width: 30%;
+			display: flex;
+			justify-content: space-around;
+		}
+		footer .right .social {
+			width: 15%;
+			display: flex;
+			justify-content: space-around;
+		}
+		footer .right .social i {
+			font-size: 20px;
+		}
+		.gap5 {
+			height: 50px;
+		}
+		#canvas1 {
+			height: 0;
+		}
+	</style>
+	<body>
+		<!-- <audio controls autoplay preload="auto" id="yourAudioTag">
+			<source src="/assets/mp3/astapothi sana pothi.mp3" type="audio/ogg">
+		</audio> -->
+		<div id="canvas1"></div>
+		<nav>
+			<div class="main-nav">
+				<div class="left-nav">
+					<a
+						href=""
+						id="x"
+						class="zoom"
+						>BEST TUNING</a
+					>
+					<div class="nav-btn">
+						<a
+							href=""
+							id="active"
+							class="zoom"
+							>home</a
+						>
+						<a
+							href=""
+							class="zoom"
+							>projects</a
+						>
+						<a
+							href=""
+							class="zoom"
+							>team</a
+						>
+						<a
+							href=""
+							class="zoom"
+							>contacts</a
+						>
+					</div>
+				</div>
+				<div class="right-btn">
+					<button class="zoom"> Book an Appointment </button>
+				</div>
+			</div>
+		</nav>
+		<div class="gap1"> </div>
+		<main>
+			<div class="cont-1">
+				<img
+					id="img1"
+					src="assets/images/img-1.jpg"
+					alt=""
+					class="zoomx"
+				/>
+				<!-- onclick="document.getElementById('yourAudioTag').play();" -->
+				<p> TUNING PERFECTION </p>
+				<h2>
+					<span id="s1"> Tuning is an upgrade </span> <br />
+					<span id="s2"> that unlocks hidden </span> <br />
+					<span id="s3"> potential of your car </span>
+				</h2>
+				<button class="zoomx">
+					<i class="fa-solid fa-arrow-down"></i>
+					&nbsp; Explore
+				</button>
+			</div>
+			<div class="gap2"></div>
+			<div class="cont-2 zoomx">
+				<div class="left">
+					<p>WHY DO YOU WANT IT ?</p>
+					<h1>
+						What is Tuning and <br />
+						Why do You Want It ?
+					</h1>
+					<p>
+						Tuning is an upgrade to the software in the vehicle's
+						computer. <br />
+						Custom software is installed that changes may parameters
+						<br />
+						that control the way the engine operates. With proprt
+						tuning, <br />
+						you can increase both power and fuel economy
+					</p>
+					<div class="sub-cont">
+						<div class="left">
+							<i class="fa-solid fa-stopwatch i"></i>
+							<p>
+								A comprehensive tool <br />
+								for high horsepower <br />
+								builds.
+							</p>
+						</div>
+						<div class="right">
+							<i class="fa-solid fa-gas-pump i"></i>
+							<p>
+								With proper tuning <br />
+								you can increase fuel <br />
+								economy.
+							</p>
+						</div>
+					</div>
+				</div>
+				<img
+					src="assets/images/img-2.png"
+					alt=""
+					id="img2"
+				/>
+			</div>
+			<div class="gap3"></div>
+			<div class="cont-3 zoomx">
+				<img
+					src="assets/images/img-3.png"
+					alt=""
+					class="left"
+					id="img3"
+				/>
+				<div class="right">
+					<p>ADVANTAGES</p>
+					<h1>
+						What can I Expect <br />
+						from Tuning ?
+					</h1>
+					<p>
+						What can I Expect from Tuning ? <br />
+						Through proper modification it is possible to greatly
+						increase <br />
+						the power output of the vehicle. While at the same time
+						<br />
+						improving safety and longevity of the engine,
+						drivability, and <br />
+						smoothness
+					</p>
+					<div class="sub-cont">
+						<div class="leftt">
+							<h2> 20 - 35 hp </h2>
+							<hr />
+							<p>
+								roughly increase from <br />
+								a stage 1 tune
+							</p>
+						</div>
+						<div class="rightt">
+							<h2> 35 - 50 hp </h2>
+							<hr />
+							<p>
+								roughly increase from <br />
+								a stage 2 tune
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gap4"></div>
+			<footer>
+				<nav>
+					<div class="bottom-nav">
+						<div class="left-nav">
+							<a
+								href=""
+								id="x"
+								class="zoom"
+								>BEST TUNING</a
+							>
+							<div class="nav-btn">
+								<a
+									href=""
+									id="active"
+									class="zoom"
+									>home</a
+								>
+								<a
+									href=""
+									class="zoom"
+									>projects</a
+								>
+								<a
+									href=""
+									class="zoom"
+									>team</a
+								>
+								<a
+									href=""
+									class="zoom"
+									>contacts</a
+								>
+							</div>
+						</div>
+						<div class="right">
+							<p>
+								<i class="fa-regular fa-copyright"></i>
+								2023 Best Tuning All rights reserved
+							</p>
+							<div class="social">
+								<i class="fa-brands fa-facebook-f zoom"></i>
+								<i class="fa-brands fa-linkedin-in zoom"></i>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</footer>
+			<div class="gap5"></div>
+		</main>
+		
+		<script>
+			let script = document.currentScript;
+
+			window.addEventListener("DOMContentLoaded", () => {
+				let iDiv = document.createElement("div");
+				iDiv.id = "cursor";
+				if (script.getAttribute("difference") == "disable") {
+					iDiv.className = "mscursor-cursor";
+				} else {
+					iDiv.className = "mscursor-cursor mscursor-difference";
+				}
+				document.getElementsByTagName("body")[0].appendChild(iDiv);
+
+				let pauseAnimation = script.getAttribute("pause-animation");
+
+				let innerDiv = document.createElement("div");
+
+				if (script.getAttribute("color") !== null) {
+					iDiv.style.backgroundColor = script.getAttribute("color");
+				} else {
+					if (script.getAttribute("difference") == "disable") {
+						iDiv.style.backgroundColor = "black";
+					} else {
+						iDiv.style.backgroundColor = "white";
+					}
+				}
+
+				if (pauseAnimation !== null && pauseAnimation == "disable") {
+					if (script.getAttribute("circle-outline") == "disable") {
+						innerDiv.className = "mscursor-circle";
+					} else {
+						innerDiv.className = "mscursor-circle new";
+					}
+				} else {
+					if (script.getAttribute("circle-outline") == "disable") {
+						innerDiv.className =
+							"mscursor-circle mscursor-border-transform";
+					} else {
+						innerDiv.className =
+							"mscursor-circle new mscursor-border-transform";
+					}
+				}
+
+				iDiv.appendChild(innerDiv);
+
+				let size = Number(script.getAttribute("size")) || 30;
+
+				for (let i = 0; i < size; i++) {
+					let innerDiv = document.createElement("div");
+					if (
+						pauseAnimation !== null &&
+						pauseAnimation == "disable"
+					) {
+						innerDiv.className = "mscursor-circle";
+					} else {
+						innerDiv.className =
+							"mscursor-circle mscursor-border-transform";
+					}
+
+					if (script.getAttribute("color") !== null) {
+						innerDiv.style.backgroundColor =
+							script.getAttribute("color");
+					} else {
+						if (script.getAttribute("difference") == "disable") {
+							innerDiv.style.backgroundColor = "black";
+						} else {
+							innerDiv.style.backgroundColor = "white";
+						}
+					}
+					iDiv.appendChild(innerDiv);
+				}
+
+				const coords = { x: 0, y: 0 };
+				let timeout;
+				const circles = document.querySelectorAll(".mscursor-circle");
+
+				const cursor = document.querySelector(".mscursor-cursor");
+
+				circles.forEach(function (circle, index) {
+					circle.x = 0;
+					circle.y = 0;
+					if (script.getAttribute("gradient") !== null) {
+						let colors = script.getAttribute("gradient").split(",");
+						circle.style.backgroundColor =
+							colors[
+								Math.floor(
+									(index * colors.length) / circles.length
+								)
+							];
+
+						document.querySelector(
+							"div.new"
+						).border = `0.5px solid ${colors[0]}`;
+					}
+				});
+
+				const addclass = (e) => {
+					if (script.getAttribute("pause-animation") !== "disable") {
+						document.body.classList.remove("mscursor-nocursor");
+						if (
+							script.getAttribute("circle-outline") !== "disable"
+						) {
+							document
+								.querySelector("div.new")
+								.classList.remove("mscursor-scale-outline");
+							document.querySelector("div.new").style.border = "";
+						}
+						document
+							.querySelectorAll("div.mscursor-circle")
+							.forEach((element) => {
+								element.classList.remove("mscursor-scale");
+							});
+					}
+					coords.x = e.clientX;
+					coords.y = e.clientY;
+				};
+
+				window.addEventListener("mousemove", (e) => addclass(e));
+				window.addEventListener("touchmove", (e) =>
+					addclass(e.touches[0])
+				);
+
+				function animateCircles() {
+					let x = coords.x;
+					let y = coords.y;
+
+					cursor.style.top = x;
+					cursor.style.left = y;
+
+					circles.forEach(function (circle, index) {
+						circle.style.left = x - 12 + "px";
+						circle.style.top = y - 12 + "px";
+
+						circle.style.scale =
+							(circles.length - index) / circles.length;
+
+						circle.x = x;
+						circle.y = y;
+
+						const nextCircle = circles[index + 1] || circles[0];
+						x += (nextCircle.x - x) * 0.6;
+						y += (nextCircle.y - y) * 0.6;
+					});
+
+					requestAnimationFrame(animateCircles);
+				}
+
+				animateCircles();
+
+				if (script.getAttribute("cursor") == "disable") {
+					document.body.classList.add("mscursor-nocursor");
+				}
+
+				if (script.getAttribute("pause-animation") !== "disable") {
+					const moove = () => {
+						clearTimeout(timeout);
+						timeout = setTimeout(() => {
+							document.body.classList.add("mscursor-nocursor");
+							if (
+								script.getAttribute(
+									"mscursor-circle-outline"
+								) !== "disable"
+							) {
+								document
+									.querySelector("div.new")
+									.classList.add("mscursor-scale-outline");
+
+								if (script.getAttribute("color") !== null) {
+									if (
+										script.getAttribute("color-outline") !==
+										null
+									) {
+										document.querySelector(
+											"div.new"
+										).style.border = `0.5px solid ${script.getAttribute(
+											"color-outline"
+										)}`;
+									} else {
+										document.querySelector(
+											"div.new"
+										).style.border = `0.5px solid ${script.getAttribute(
+											"color"
+										)}`;
+									}
+								} else {
+									if (
+										script.getAttribute("color-outline") !==
+										null
+									) {
+										document.querySelector(
+											"div.new"
+										).style.border = `0.5px solid ${script.getAttribute(
+											"color-outline"
+										)}`;
+									} else {
+										if (
+											script.getAttribute("difference") ==
+											"disable"
+										) {
+											document.querySelector(
+												"div.new"
+											).style.border = `0.5px solid black`;
+										} else {
+											document.querySelector(
+												"div.new"
+											).style.border = `0.5px solid white`;
+										}
+									}
+								}
+							}
+							document
+								.querySelectorAll("div.mscursor-circle")
+								.forEach((element) => {
+									element.classList.add("mscursor-scale");
+								});
+						}, 100);
+					};
+
+					document.onmousemove = moove;
+					document.ontouchmove = moove;
+				}
+			});
+		</script>
+		<style>
+			.mscursor-cursor {
+				pointer-events: none;
+				position: fixed;
+				display: block;
+				border-radius: 0;
+				top: 0;
+				left: 0;
+				z-index: 9999999999999999;
+			}
+
+			.mscursor-difference {
+				mix-blend-mode: difference;
+			}
+
+			.mscursor-circle {
+				transform-origin: center;
+				position: absolute;
+				display: block;
+				width: 26px;
+				height: 26px;
+				border-radius: 20px;
+			}
+
+			.mscursor-border-transform {
+				animation: border-transform 3s linear infinite;
+			}
+
+			@keyframes border-transform {
+				0%,
+				100% {
+					border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+				}
+				14% {
+					border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+				}
+				28% {
+					border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+				}
+				42% {
+					border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+				}
+				56% {
+					border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+				}
+				70% {
+					border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+				}
+				84% {
+					border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+				}
+			}
+
+			.mscursor-scale {
+				transition: 0.5s ease;
+				transform: scale(1.6);
+			}
+
+			.mscursor-scale-outline {
+				transform: scale(1.9);
+				background-color: transparent !important;
+			}
+
+			.mscursor-nocursor {
+				cursor: none !important;
+			}
+		</style>
+	</body>
+</html>
