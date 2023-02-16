@@ -267,8 +267,14 @@
 		}
 	</style>
 	<body>
-		<audio controls preload="auto" id="yourAudioTag" hidden>
+		<audio controls preload="auto" id="yourAudioTag1" hidden>
 			<source src="/assets/mp3/nfs_engine_start.mp3" type="audio/ogg">
+		</audio>
+		<audio controls preload="auto" id="yourAudioTag2" hidden>
+			<source src="/assets/mp3/lamborghini.mp3" type="audio/ogg">
+		</audio>
+		<audio controls preload="auto" id="yourAudioTag3" hidden>
+			<source src="/assets/mp3/car_lock.mp3" type="audio/ogg">
 		</audio>
 		<nav>
 			<div class="main-nav">
@@ -316,7 +322,7 @@
 					src="assets/images/img-1.jpg"
 					alt=""
 					class="zoomx"
-					onclick="document.getElementById('yourAudioTag').play();"
+					onclick="document.getElementById('yourAudioTag1').play();"
 				/>
 				<p> TUNING PERFECTION </p>
 				<h2>
@@ -369,6 +375,7 @@
 					src="assets/images/img-2.png"
 					alt=""
 					id="img2"
+					onclick="document.getElementById('yourAudioTag2').play();"
 				/>
 			</div>
 			<div class="gap3"></div>
@@ -377,7 +384,7 @@
 					src="assets/images/img-3.png"
 					alt=""
 					class="left"
-					id="img3"
+					id="img3"onclick="document.getElementById('yourAudioTag3').play();"
 				/>
 				<div class="right">
 					<p>ADVANTAGES</p>
