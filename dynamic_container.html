@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Document</title>
+		<style>
+            #myDIV{
+                /* display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+            }
+			p {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+				width: 150px;
+				height: 150px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="myDIV">
+		</div>
+		<script>
+			for (i = 1; i <= 100; i++) {
+				const para = document.createElement("p");
+				para.innerHTML = i;
+				document.getElementById("myDIV").appendChild(para);
+				console.log(i);
+                if(i%2==0){
+                    para.style.backgroundColor = "lightgreen"
+                }
+                else{
+                    para.style.backgroundColor = "lightblue"
+                }
+			}
+		</script>
+	</body>
+</html>
