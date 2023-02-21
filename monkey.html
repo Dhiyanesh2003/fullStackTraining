@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
 		<title>Document</title>
 		<style>
-			#closed {
-				visibility: visible;
+			button {
+				background-color: white;
+				border: none;
+                cursor: pointer;
 			}
-			#open {
-				visibility: hidden;
+			img {
+				width: 200px;
+				height: 200px;
+                border: 1px solid;
+                border-radius: 50%;
 			}
+            #hover{
+                position: absolute;
+                top: 300px;
+                left: 300px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: blueviolet;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 25px;
+                cursor: pointer;
+            }
 		</style>
 		<script>
-			function open() {
-				console.log("hii");
-				// document.getElementById("closed").style.display = "block";
-				// console.log("hii");
-				// document.getElementById("open").style.display = "hidden";
-				// console.log("hii");
+			var count = 1;
+			function hello() {
+				if (count == 1) {
+					document.getElementById("closed").src =
+						"assets/images/open-removebg-preview.png";
+					count = 0;
+				} else {
+					document.getElementById("closed").src =
+						"assets/images/closed.png";
+					count = 1;
+				}
 			}
+            function hover(){
+                document.getElementById("hover").style.width = "300px"
+                document.getElementById("hover").style.height = "300px"
+            }
+            function hoverout(){
+                document.getElementById("hover").style.width = "200px"
+                document.getElementById("hover").style.height = "200px"
+            }
 		</script>
 	</head>
 	<body>
-		<button onclick="open()">
-			<!-- <img
-					src="assets/images/closed.png"
-					alt="closed"
-					id="closed"
-				/> -->
-			hii
+		<button onclick="hello()">
+			<img
+				src="assets/images/closed.png"
+				alt=""
+				id="closed"
+			/>
 		</button>
-		<!-- <button>
-				<img
-					src="assets/images/open-removebg-preview.png"
-					alt="open"
-					id="open"
-				/>
-			</button> -->
+        <div id="hover" onmouseover="hover()" onmouseout="hoverout()">Hover me</div>
 	</body>
 </html>
