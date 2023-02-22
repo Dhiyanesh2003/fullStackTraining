@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Document</title>
+	</head>
+	<body>
+		<main>
+			<h1></h1>
+		</main>
+	</body>
+	<script>
+        // question 1
+
+        const names = ["ayush","deepak","dhiyanesh"]
+        names.forEach(function(elements){
+            console.log(elements)
+        })
+
+        // question 2
+
+        const nums = ["1","2","3","4"]
+        const square = nums.map(function(num){
+            return num*num
+        })
+        console.log(square)
+
+        // question 3
+
+        const country = ["England","America","India","Pakistan","Dubai"]
+        let count = country.filter(a=>!a.startsWith("E"))
+        console.log(count)
+
+        // question 4
+
+        const ans = [4,"hello",444,'j']
+
+        function str(ans){
+            let b = new Set();
+            for(a of ans){
+                if(typeof a === 'string'){
+                    b.add(a)
+                }
+            }
+            return b;
+        }
+
+        let res = str(ans)
+        console.log(res)
+	</script>
+</html>
